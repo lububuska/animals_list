@@ -1,6 +1,7 @@
 package com.example.animals
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -35,7 +36,8 @@ class FragmentA : Fragment() {
         list.adapter = adapter
 
         list.setOnItemClickListener { _, _, pos, _ ->
-            callback?.onAnimalSelected(animals[pos])
+            val intent = Intent(requireContext(), SecondActivity::class.java)
+            startActivity(intent)
         }
 
         return view
